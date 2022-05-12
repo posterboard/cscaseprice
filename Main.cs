@@ -1,24 +1,19 @@
-﻿using CsvHelper;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.IO;
 
-//See https://aka.ms/new-console-template for more information
-
-namespace Main
-{
-
-    class Program
-    {
-        
-        static void Main(string[] args)
-        {
-
-            int currency = 1;//
+class Program {
+  public static void Main (string[] args) {
+                int currency = 1;//
 
 
 
           //  Task<string> a = client.GetStringAsync("" + currency + "" + urlExtension);
-            string outputDir = "C:/Users/zbria/Desktop/GloveOutput.txt";
+            string outputDir = "./GloveOutput.txt";
             StreamWriter sw = new StreamWriter(outputDir);
-            string[] urlExtensionList = new string[] { "Operation%20Vanguard%20Weapon%20Case", "Clutch%20Case", "Glove%20Case" };
+            string[] urlExtensionList = new string[] { "Operation%20Vanguard%20Weapon%20Case", "Operation&20Riptide%20Weapon%20Case","Clutch%20Case", "Glove%20Case","Danger%20Zone%20Case","Clutch%20Case" };
             string[] output = fetchApi(urlExtensionList, 3);
 
             for (int i = 0; i < output.Length; i++)
@@ -30,8 +25,9 @@ namespace Main
 
 
 
-        }
-        private static string[] fetchApi(string[] urlExtensionArray, int currency)
+
+  }
+   private static string[] fetchApi(string[] urlExtensionArray, int currency)
         {
             HttpClient client = new HttpClient();
             string urlExtension = "https://steamcommunity.com/market/priceoverview/?appid=730&currency=" + currency + "&market_hash_name=";
@@ -47,10 +43,4 @@ namespace Main
             return jsonString;
 
         }
-    }
-
-
-  
 }
-
-//

@@ -1,6 +1,5 @@
 ﻿using CsvHelper;
-using HtmlAgilityPack;
-using Jurassic;
+
 //See https://aka.ms/new-console-template for more information
 
 namespace Main
@@ -24,8 +23,7 @@ namespace Main
 
             for (int i = 0; i < output.Length; i++)
             {
-                //Console.WriteLine(i);
-                Console.WriteLine(output[i]+"\n");
+             
                 sw.Write(output[i]);
             }
             sw.Close();

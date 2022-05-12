@@ -5,35 +5,54 @@ using Jurassic;
 
 namespace Main
 {
+
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Console.WriteLine("EHLLO WROLD");
-            string itemUrl = "29/Operation-Vanguard-Weapon-Case";
-            HtmlWeb web = new HtmlWeb();
-            HtmlDocument targetDoc = web.Load("https://csgostash.com/case/" + itemUrl);
-            var HeaderNames = targetDoc.DocumentNode.SelectNodes("//span[@class='market_commodity_order__summary']");
-            string output= "C:/Users/zbria/Desktop/GloveOutput.txt";
+
+            int currency = 1;//
 
 
 
+          //  Task<string> a = client.GetStringAsync("" + currency + "" + urlExtension);
+            string outputDir = "C:/Users/zbria/Desktop/GloveOutput.txt";
+            StreamWriter sw = new StreamWriter(outputDir);
+            string[] urlExtensionList = new string[] { "Operation%20Vanguard%20Weapon%20Case", "Clutch%20Case", "Glove%20Case" };
+            string[] output = fetchApi(urlExtensionList, 3);
 
-            StreamWriter sw = new StreamWriter(output);
-            targetDoc.Save(sw);
-            Console.WriteLine(sw);
-
-
-
-            /* for (int i= 0; i < 5; i++)
+            for (int i = 0; i < output.Length; i++)
             {
-                Console.Write(i);
-                Thread.Sleep(2000);
+                //Console.WriteLine(i);
+                Console.WriteLine(output[i]+"\n");
+                sw.Write(output[i]);
             }
-           */
+            sw.Close();
+
+
+
         }
-        
+        private static string[] fetchApi(string[] urlExtensionArray, int currency)
+        {
+            HttpClient client = new HttpClient();
+            string urlExtension = "https://steamcommunity.com/market/priceoverview/?appid=730&currency=" + currency + "&market_hash_name=";
+            string[] jsonString = new string[urlExtension.Length];
+            Task<string> temp;
+            for (int i = 0; i < urlExtensionArray.Length; i++)
+            {
+                Console.WriteLine(i);
+                temp = client.GetStringAsync(urlExtension+urlExtensionArray[i]);
+                jsonString[i] = temp.Result;
+            }
+
+            return jsonString;
+
+        }
     }
+
+
+  
 }
 
 //

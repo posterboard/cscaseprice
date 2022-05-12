@@ -8,33 +8,45 @@ namespace Main
 
     class Program
     {
+        
         static void Main(string[] args)
         {
-            HttpClient client = new HttpClient();
+
             int currency = 1;//
-            string urlExtension = "Operation%20Vanguard%20Weapon%20Case";
 
 
-            Task<string> a = client.GetStringAsync("https://steamcommunity.com/market/priceoverview/?appid=730&currency=" + currency + "&market_hash_name=" + urlExtension);
+
+          //  Task<string> a = client.GetStringAsync("" + currency + "" + urlExtension);
             string outputDir = "C:/Users/zbria/Desktop/GloveOutput.txt";
             StreamWriter sw = new StreamWriter(outputDir);
-            sw.Write(a.Result.ToString());
+            string[] urlExtensionList = new string[] { "Operation%20Vanguard%20Weapon%20Case", "Clutch%20Case", "Glove%20Case" };
+            string[] output = fetchApi(urlExtensionList, 3);
+
+            for (int i = 0; i < output.Length; i++)
+            {
+                //Console.WriteLine(i);
+                Console.WriteLine(output[i]+"\n");
+                sw.Write(output[i]);
+            }
             sw.Close();
 
 
 
-            /* for (int i= 0; i < 5; i++)
-            {
-                Console.Write(i);
-                Thread.Sleep(2000);
-            }
-           */
         }
-        private Task[] hello()
+        private static string[] fetchApi(string[] urlExtensionArray, int currency)
         {
-            Task<string>[] jsonArray;
+            HttpClient client = new HttpClient();
+            string urlExtension = "https://steamcommunity.com/market/priceoverview/?appid=730&currency=" + currency + "&market_hash_name=";
+            string[] jsonString = new string[urlExtension.Length];
+            Task<string> temp;
+            for (int i = 0; i < urlExtensionArray.Length; i++)
+            {
+                Console.WriteLine(i);
+                temp = client.GetStringAsync(urlExtension+urlExtensionArray[i]);
+                jsonString[i] = temp.Result;
+            }
 
-            return jsonArray;
+            return jsonString;
 
         }
     }

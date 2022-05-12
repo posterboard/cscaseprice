@@ -5,23 +5,21 @@ using Jurassic;
 
 namespace Main
 {
+
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("EHLLO WROLD");
-            string itemUrl = "29/Operation-Vanguard-Weapon-Case";
-            HtmlWeb web = new HtmlWeb();
-            HtmlDocument targetDoc = web.Load("https://csgostash.com/case/" + itemUrl);
-            var HeaderNames = targetDoc.DocumentNode.SelectNodes("//span[@class='market_commodity_order__summary']");
-            string output= "C:/Users/zbria/Desktop/GloveOutput.txt";
+            HttpClient client = new HttpClient();
+            int currency = 1;//
+            string urlExtension = "Operation%20Vanguard%20Weapon%20Case";
 
 
-
-
-            StreamWriter sw = new StreamWriter(output);
-            targetDoc.Save(sw);
-            Console.WriteLine(sw);
+            Task<string> a = client.GetStringAsync("https://steamcommunity.com/market/priceoverview/?appid=730&currency=" + currency + "&market_hash_name=" + urlExtension);
+            string outputDir = "C:/Users/zbria/Desktop/GloveOutput.txt";
+            StreamWriter sw = new StreamWriter(outputDir);
+            sw.Write(a.Result.ToString());
+            sw.Close();
 
 
 
@@ -32,8 +30,17 @@ namespace Main
             }
            */
         }
-        
+        private Task[] hello()
+        {
+            Task<string>[] jsonArray;
+
+            return jsonArray;
+
+        }
     }
+
+
+  
 }
 
 //

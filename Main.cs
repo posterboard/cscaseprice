@@ -1,73 +1,95 @@
-/*
-Brian Huang
-3/~/22
-FBI
-Extra: Always print gender
-*/
-import java.util.Arrays;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Net.Http;
+using System.IO;
+using System.Collections.Generic;
+class Program
+{
+    public static void Main(string[] args)
+    {
+        int currency = 1;//
 
-class Main {
-  public static void main(String[] args) {
-    
-    
-    //from the arrays provided
-    String[] name = {"Bowman", "Walker", "Christian", "Edwards", "Cummings", "Halpern", "Scott", "Rhineheart", "Haley", "Brooks"};
-    String[] address = {"Canaan", "Nenwark", "Hardwick", "Montgomery", "Trenton", "Liverpool", "Sheridan", "Houson", "Westfield", "Syosset"};
-    String[] state = {"CT", "NJ", "VT", "AL", "NJ", "NY", "WY", "TX", "NJ", "NY"};
-    String[] car =  {"Saturn", "Oldsmobile", "Chevrolet", "Chevrolet", "Ford", "Chevrolet", "Ford", "Cadillac", "Honda", "Ford"};
-    char[] sex = {'M', 'F', 'M', 'M', 'M', 'F', 'M', 'F', 'F', 'M'};
-    int[] age = {48, 39, 46, 71, 31, 38, 51, 62, 22, 32};
-    int[] salary = {18000, 27000, 59000, 78000, 25000, 45000, 19000, 91000, 33000, 40000};
-    int[] savings = {4200, 3600, 1900, 500, 7800, 12000, 400, 53200, 4700, 3900};
-    int[] year = {2009, 2006, 2010, 2013, 2009, 2012, 2008, 2017, 2004, 2011};
 
-    int count=0;
-    //Case 1
-    System.out.println("Case 1 for Inspector Holmes");
-    for (int i = 0; i < 10; i++) {
-      if (sex[i] == 'M' && age[i] > 30 && car[i].equals("Ford") && salary[i] > 20000) {
-        System.out.println("Name: " + name[i] + "\nAdress: " + address[i]);
+
+        //  Task<string> a = client.GetStringAsync("" + currency + "" + urlExtension);
+        string outputDir ="./GloveOutput.txt";
+        StreamWriter sw = new StreamWriter(outputDir,append: true);
+        /*
+        Csgo Weapn Case, Operation Bravo Case, CSGO weapon case 2, winter offensive casee, csgo weapon case3,
+         operatiotn phoniex, huntsman, operation breakout, operation vanguard, chroma, chroma 2, falchion case, shadow case, revolver case,
+        operation wildfire, chroma 3, gamma, gamma 2, glove, spectrum,  operation hydra, spectrum 2,clutch,  horizon case, danger zone, primsa, cs20,
+        prisma 2, fracture, snakebite, dreams and nightmares
+         
+         */
+        string[] caseNames = new string[] { "CSGO Weapon Case","Operation Bravo Case","CSGO weapon case 2","Winter Offensive Case"," CSGO Weapon Case 3","Operation Phoneix Case","Huntsman Case","Operation Breakout Case"," Operation Vanguard Case", "Chroma Case", "Chroma 2 Case "," Falchion case"," Shadow Case"," Revolver Case","Operation Wildfire Case","Chroma 3 Case","Gamma Case", "Gamma 2 Case","Glove Case","Spectrum Case","Operation Hydra Case", "Spectrum 2 Case","Clutch Case","Horizon Case","Danger Zone Case","Prisma Case","CS20 Case","Operation Shattered Web Case","Primsa 2 Case","Fracture Case","Operation Broken Fang Case","Snakebite Case","Operation Riptide Case","Dreams & Nightmares Case"};
+        string[] urlExtensionList = new string[] { "CS:GO%20Weapon%20Case", "Operation%20Bravo%20Case","CS%3AGO%20Weapon%20Case%202", "Winter%20Offensive%20Weapon%20Case", "CS%3AGO%20Weapon%20Case%203" , "Operation%20Phoenix%20Weapon%20Case", "Huntsman%20Weapon%20Case", "Operation%20Breakout%20Weapon%20Case", "Operation%20Vanguard%20Weapon%20Case", "Chroma%20Case" , "Chroma%202%20Case", "Falchion%20Case" , "Shadow%20Case","Revolver%20Case", "Operation%20Wildfire%20Case", "Chroma%203%20Case", "Gamma%20Case", "Gamma%202%20Case", "Glove%20Case", "Spectrum%20Case", "Operation%20Hydra%20Case", "Spectrum%202%20Case", "Clutch%20Case", "Horizon%20Case", "Danger%20Zone%20Case", "Prisma%20Case" };
+        string[] output = fetchApi(urlExtensionList, currency);
+      ////////////////Deletelater
+      sw.WriteLine();
+      sw.WriteLine();
+      sw.WriteLine();
+      ////////////////
+      sw.WriteLine(DateTime.Now);
+        for (int i = 0; i < output.Length; i++)
+        {
+            /////dlete later
+            sw.WriteLine(caseNames[i]);
+            /////
+            sw.WriteLine(output[i]);
+            
+        }
+        sw.Close();
+
+
+
+
+    }
+    private static string[] fetchApi(string[] urlExtensionArray, int currency)
+    {
+        HttpClient client = new HttpClient();
+        string urlExtension = "https://steamcommunity.com/market/priceoverview/?appid=730&currency=" + currency + "&market_hash_name=";
+        string[] jsonString = new string[urlExtension.Length];
+        Task<string> temp;
+        Console.WriteLine(urlExtensionArray.Length);
+      bool pass=false;
+      bool reset = false;
+      int startNum = 0;
+      while(!pass){
+        reset=true;
+        pass=true;
+      for (int i = startNum; i < urlExtensionArray.Length; i++)
+        {
+            Console.WriteLine(i);
+          try{
+            temp = client.GetStringAsync(urlExtension + urlExtensionArray[i]);
+            //Thread.Sleep(1000);
+            jsonString[i] = temp.Result;
+          }catch(Exception e){
+            if(reset){
+              startNum=i;
+              reset=false;
+              
+            }
+            pass=false;
+            Console.WriteLine("Failed");
+          }
+        }
+        //my only solution to Error 429
+        if(!pass){
+        Console.WriteLine("sleeping");
+        Thread.Sleep(30000);
+        Console.WriteLine("not sleepign");
+        }
         
-        count++;
       }
+ var tempList = new List<string>();
+foreach (var s in jsonString)
+{
+    if (!string.IsNullOrEmpty(s))
+        tempList.Add(s);
+}
+jsonString = tempList.ToArray();
+return jsonString;
     }
-    
-    count = 0;
-
-    //Case 2
-    System.out.println("Case 2 for Inspector Clouseau");
-    for (int i = 0; i < 10; i++) {
-      if ((car[i].equals("Chevrolet") || car[i].equals("Ford") || car[i].equals("Honda")) && salary[i] > 15000 && savings[i] < 20000) {
-        System.out.println("Name: " + name[i]);
-        System.out.println("Gender: "+sex[i]);
-        count++;
-      }
-    }
-  
-    count = 0;
-
-    //Case 3
-    System.out.println("Case 3 for Inspector Simon");
-    for (int i = 0; i < 10; i++) {
-      if (sex[i] == 'F') {
-        System.out.println("Name: " + name[i] + "\nModel: " + car[i] + "\nYear: " + year[i]);
-        System.out.println("Gender: "+sex[i]);
-        count++;
-      }
-    }
-    
-    count = 0;
-
-    //Case 4
-    System.out.println("Case 4 for Pink Panther (undercover)");
-    for (int i = 0; i < 10; i++) {
-      if (sex[i] == 'M' && age[i] < 35 && car[i].equals("Ford") && state[i].equals("NJ")) {
-        System.out.println("Name: " + name[i]);
-        System.out.println("Gender: "+sex[i]);
-        count++;
-      }
-    }
-   
-    count = 0;
-  }
 }

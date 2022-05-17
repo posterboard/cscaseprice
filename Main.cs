@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.IO;
 using System.Collections.Generic;
 using System.Text.Json;
-using System.Json.Serialization;
+using System.Text.Json.Serialization;
 class Program
 {
     public static void Main(string[] args)
@@ -13,7 +13,7 @@ class Program
         String direct =  Environment.GetLogicalDrives()[0]+"/Users/"+ Environment.UserName+"/Desktop/GloveOutput.txt";
   
         updateCaseValues(1, direct);
-
+        deSerializeJson(direct);
     }
     private static void updateCaseValues(int c, string directory)
     {
@@ -38,7 +38,7 @@ class Program
         sw.Close();
 
         Console.WriteLine("Not here");
-
+        
     }
     private static string fetchApi(string urlExtension, int currency, HttpClient c)
     {
@@ -89,9 +89,22 @@ class Program
         jsonString = tempList.ToArray();
         return output;
     }
-    private static string[] readJson()
+    private static string[] deSerializeJsonFromFile(String fileLoc)
     {
+        StreamReader r = new StreamReader(fileLoc);
+        string json = r.ReadToEnd();
+        Console.WriteLine(json);
         string[] h = new string[2];
         return h;
+    }
+
+
+    private static string[] deSerializeJson(String json)
+    {
+        //%20 =spacae
+        //%3A = colon
+        string[] jsonOut=new string[5];
+
+        return jsonOut;
     }
 }

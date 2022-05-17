@@ -15,7 +15,7 @@ class Program
         updateCaseValues(1, direct);
         deSerializeJson(direct);
     }
-    private static void updateCaseValues(int c, string directory)
+        private static void updateCaseValues(int c, string directory)
     {
         int currency = c;//
 
@@ -69,7 +69,7 @@ class Program
 
                 }
                 pass = false;
-                Console.WriteLine("Failed"+urlExtension);
+                Console.WriteLine("Failed"+urlExtension+" retrying");
             }
 
             //my only solution to Error 429
@@ -107,4 +107,10 @@ class Program
 
         return jsonOut;
     }
+  public class CaseData{
+    public bool success{get;set;}
+    public string lowest_price{get;set;}
+    public int volume{get;set;}
+    public string median_price{get;set;}
+  }
 }

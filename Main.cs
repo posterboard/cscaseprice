@@ -104,7 +104,8 @@ class Program
         //%20 =spacae
         //%3A = colon
         string[] jsonOut=new string[5];
-
+        CaseData cD = await JsonSerializer.DeserializeAsync<CaseData>(json);
+      //string[0]
         return jsonOut;
     }
   public class CaseData{

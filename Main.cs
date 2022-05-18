@@ -10,12 +10,12 @@ class Program
 {
     public static void Main(string[] args)
     {
-        String direct =  Environment.GetLogicalDrives()[0]+"/Users/"+ Environment.UserName+"/Desktop/GloveOutput.txt";
+        String direct =  Environment.GetLogicalDrives()[0]+"/Users/"+ Environment.UserName+"/Desktop/CaseOutput.txt";
   
         updateCaseValues(1, direct);
-        deSerializeJson(direct);
+        
     }
-        private static void updateCaseValues(int c, string directory)
+    private static void updateCaseValues(int c, string directory)
     {
         int currency = c;//
 
@@ -29,11 +29,19 @@ class Program
 
         sw.WriteLine(DateTime.Now);
         HttpClient client = new HttpClient();
+        string result;
+        CaseData currentCase;
+        var options = new JsonSerializerOptions{WriteIndented = true};
         for (int i = 0; i < urlExtensionList.Length; i++)
         {
+            result = fetchApi(urlExtensionList[i], 1, client);
 
-            sw.WriteLine(fetchApi(urlExtensionList[i], 1, client));
 
+            //insert name into json
+            currentCase = deSerializeJson(result);
+            currentCase.name=caseNames[i];
+
+            sw.WriteLine(JsonSerializer.Serialize(currentCase));
         }
         sw.Close();
 
@@ -69,13 +77,14 @@ class Program
 
                 }
                 pass = false;
-                Console.WriteLine("Failed"+urlExtension+" retrying");
+                Console.WriteLine("Failed" + urlExtension + " retrying");
             }
 
             //my only solution to Error 429
             if (!pass)
             {
-                Thread.Sleep(3000);
+                //20 requests per minute apparently
+                Thread.Sleep(60000);
 
             }
 
@@ -99,18 +108,23 @@ class Program
     }
 
 
-    private static string[] deSerializeJson(String json)
+    private static CaseData deSerializeJson(String json)
     {
         //%20 =spacae
         //%3A = colon
-        string[] jsonOut=new string[5];
+       
+        
+        CaseData cD =  JsonSerializer.Deserialize<CaseData>(json);
 
-        return jsonOut;
+
+        return cD;
     }
-  public class CaseData{
-    public bool success{get;set;}
-    public string lowest_price{get;set;}
-    public int volume{get;set;}
-    public string median_price{get;set;}
-  }
+    public class CaseData
+    {
+        public string name { get; set; }
+        public string lowest_price { get; set; }
+        public string volume { get; set; }
+        public string median_price { get; set; }
+        
+    }
 }

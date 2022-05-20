@@ -43,7 +43,7 @@ class Program
             //insert name into json
             currentCase = deSerializeJson(result);
             currentCase.name=caseNames[i];
-            currentCase.dateTime=DateTime.Now.ToString();
+            currentCase.date_time=DateTime.Now.ToString();
 
             sw.WriteLine(JsonSerializer.Serialize(currentCase));
         }
@@ -126,7 +126,7 @@ class Program
     public class CaseData
     {
         public string name { get; set; }
-        public string dateTime { get; set; }
+        public string date_time { get; set; }
         public string lowest_price { get; set; }
         public string volume { get; set; }
         public string median_price { get; set; }

@@ -1,108 +1,26 @@
-5/18/2022 6:56:40 PM
-{"name":"CSGO Weapon Case","success":true,"lowest_price":"$64.08","volume":"122","median_price":"$63.99"}
-{"name":"Operation Bravo Case","success":true,"lowest_price":"$44.07","volume":"155","median_price":"$42.91"}
-{"name":"CSGO weapon case 2","success":true,"lowest_price":"$7.31","volume":"150","median_price":"$7.34"}
-{"name":"Winter Offensive Case","success":true,"lowest_price":"$4.30","volume":"333","median_price":"$4.24"}
-{"name":" CSGO Weapon Case 3","success":true,"lowest_price":"$4.83","volume":"291","median_price":"$4.53"}
-{"name":"Operation Phoneix Case","success":true,"lowest_price":"$1.20","volume":"3,637","median_price":"$1.21"}
-{"name":"Huntsman Case","success":true,"lowest_price":"$4.63","volume":"306","median_price":"$4.58"}
-{"name":"Operation Breakout Case","success":true,"lowest_price":"$3.38","volume":"7,111","median_price":"$3.26"}
-{"name":" Operation Vanguard Case","success":true,"lowest_price":"$0.92","volume":"886","median_price":"$0.96"}
-{"name":"Chroma Case","success":true,"lowest_price":"$1.09","volume":"1,506","median_price":"$1.03"}
-{"name":"Chroma 2 Case ","success":true,"lowest_price":"$0.82","volume":"14,259","median_price":"$0.81"}
-{"name":" Falchion case","success":true,"lowest_price":"$0.27","volume":"3,807","median_price":"$0.27"}
-{"name":" Shadow Case","success":true,"lowest_price":"$0.27","volume":"4,330","median_price":"$0.27"}
-{"name":" Revolver Case","success":true,"lowest_price":"$0.24","volume":"13,419","median_price":"$0.23"}
-{"name":"Operation Wildfire Case","success":true,"lowest_price":"$0.47","volume":"3,152","median_price":"$0.46"}
-{"name":"Chroma 3 Case","success":true,"lowest_price":"$0.60","volume":"21,016","median_price":"$0.62"}
-{"name":"Gamma Case","success":true,"lowest_price":"$0.81","volume":"9,824","median_price":"$0.80"}
-{"name":"Gamma 2 Case","success":true,"lowest_price":"$0.92","volume":"13,670","median_price":"$0.89"}
-{"name":"Glove Case","success":true,"lowest_price":"$2.91","volume":"9,837","median_price":"$2.90"}
-{"name":"Spectrum Case","success":true,"lowest_price":"$0.94","volume":"8,799","median_price":"$0.93"}
-{"name":"Operation Hydra Case","success":true,"lowest_price":"$14.74","volume":"167","median_price":"$13.94"}
-{"name":"Spectrum 2 Case","success":true,"lowest_price":"$0.69","volume":"22,245","median_price":"$0.65"}
-{"name":"Clutch Case","success":true,"lowest_price":"$0.29","volume":"96,153","median_price":"$0.28"}
-{"name":"Horizon Case","success":true,"lowest_price":"$0.17","volume":"10,088","median_price":"$0.16"}
-{"name":"Danger Zone Case","success":true,"lowest_price":"$0.11","volume":"33,200","median_price":"$0.10"}
-{"name":"Prisma Case","success":true,"lowest_price":"$0.10","volume":"17,143","median_price":"$0.10"}
-5/18/2022 7:00:12 PM
-{"name":"CSGO Weapon Case","lowest_price":"$64.08","volume":"122","median_price":"$63.99"}
-{"name":"Operation Bravo Case","lowest_price":"$44.07","volume":"155","median_price":"$42.91"}
-{"name":"CSGO weapon case 2","lowest_price":"$7.31","volume":"150","median_price":"$7.34"}
-{"name":"Winter Offensive Case","lowest_price":"$4.30","volume":"333","median_price":"$4.24"}
-{"name":" CSGO Weapon Case 3","lowest_price":"$4.83","volume":"291","median_price":"$4.53"}
-{"name":"Operation Phoneix Case","lowest_price":"$1.21","volume":"3,637","median_price":"$1.21"}
-{"name":"Huntsman Case","lowest_price":"$4.62","volume":"306","median_price":"$4.58"}
-{"name":"Operation Breakout Case","lowest_price":"$3.30","volume":"7,111","median_price":"$3.26"}
-{"name":" Operation Vanguard Case","lowest_price":"$0.92","volume":"886","median_price":"$0.96"}
-{"name":"Chroma Case","lowest_price":"$1.09","volume":"1,506","median_price":"$1.03"}
-{"name":"Chroma 2 Case ","lowest_price":"$0.82","volume":"14,259","median_price":"$0.81"}
-{"name":" Falchion case","lowest_price":"$0.27","volume":"3,807","median_price":"$0.27"}
-{"name":" Shadow Case","lowest_price":"$0.27","volume":"4,330","median_price":"$0.27"}
-{"name":" Revolver Case","lowest_price":"$0.24","volume":"13,419","median_price":"$0.23"}
-{"name":"Operation Wildfire Case","lowest_price":"$0.48","volume":"3,152","median_price":"$0.46"}
-{"name":"Chroma 3 Case","lowest_price":"$0.60","volume":"21,016","median_price":"$0.62"}
-{"name":"Gamma Case","lowest_price":"$0.81","volume":"9,824","median_price":"$0.80"}
-{"name":"Gamma 2 Case","lowest_price":"$0.92","volume":"13,670","median_price":"$0.89"}
-{"name":"Glove Case","lowest_price":"$2.91","volume":"9,837","median_price":"$2.90"}
-{"name":"Spectrum Case","lowest_price":"$0.94","volume":"8,799","median_price":"$0.93"}
-{"name":"Operation Hydra Case","lowest_price":"$14.74","volume":"167","median_price":"$13.94"}
-{"name":"Spectrum 2 Case","lowest_price":"$0.71","volume":"22,245","median_price":"$0.65"}
-{"name":"Clutch Case","lowest_price":"$0.29","volume":"96,153","median_price":"$0.28"}
-{"name":"Horizon Case","lowest_price":"$0.16","volume":"10,088","median_price":"$0.16"}
-{"name":"Danger Zone Case","lowest_price":"$0.11","volume":"33,200","median_price":"$0.10"}
-{"name":"Prisma Case","lowest_price":"$0.10","volume":"17,143","median_price":"$0.10"}
-5/22/2022 9:18:32 PM
-{"name":"CSGO Weapon Case","lowest_price":"$67.80","volume":"197","median_price":"$68.62"}
-{"name":"Operation Bravo Case","lowest_price":"$45.31","volume":"166","median_price":"$46.29"}
-{"name":"CSGO weapon case 2","lowest_price":"$8.09","volume":"210","median_price":"$8.00"}
-{"name":"Winter Offensive Case","lowest_price":"$4.60","volume":"259","median_price":"$4.54"}
-{"name":" CSGO Weapon Case 3","lowest_price":"$4.44","volume":"262","median_price":"$4.97"}
-{"name":"Operation Phoneix Case","lowest_price":"$1.26","volume":"5,450","median_price":"$1.26"}
-{"name":"Huntsman Case","lowest_price":"$4.65","volume":"382","median_price":"$4.68"}
-{"name":"Operation Breakout Case","lowest_price":"$3.33","volume":"7,561","median_price":"$3.38"}
-{"name":" Operation Vanguard Case","lowest_price":"$0.94","volume":"813","median_price":"$0.95"}
-{"name":"Chroma Case","lowest_price":"$1.03","volume":"3,790","median_price":"$1.03"}
-{"name":"Chroma 2 Case ","lowest_price":"$0.93","volume":"14,904","median_price":"$0.92"}
-{"name":" Falchion case","lowest_price":"$0.29","volume":"5,065","median_price":"$0.28"}
-{"name":" Shadow Case","lowest_price":"$0.30","volume":"6,273","median_price":"$0.30"}
-{"name":" Revolver Case","lowest_price":"$0.27","volume":"11,221","median_price":"$0.27"}
-{"name":"Operation Wildfire Case","lowest_price":"$0.51","volume":"3,741","median_price":"$0.50"}
-{"name":"Chroma 3 Case","lowest_price":"$0.66","volume":"24,010","median_price":"$0.66"}
-{"name":"Gamma Case","lowest_price":"$0.83","volume":"12,029","median_price":"$0.82"}
-{"name":"Gamma 2 Case","lowest_price":"$0.92","volume":"15,650","median_price":"$0.92"}
-{"name":"Glove Case","lowest_price":"$2.94","volume":"10,255","median_price":"$2.91"}
-{"name":"Spectrum Case","lowest_price":"$1.00","volume":"8,571","median_price":"$1.00"}
-{"name":"Operation Hydra Case","lowest_price":"$15.46","volume":"240","median_price":"$14.84"}
-{"name":"Spectrum 2 Case","lowest_price":"$0.66","volume":"30,993","median_price":"$0.66"}
-{"name":"Clutch Case","lowest_price":"$0.30","volume":"104,399","median_price":"$0.29"}
-{"name":"Horizon Case","lowest_price":"$0.17","volume":"13,135","median_price":"$0.17"}
-{"name":"Danger Zone Case","lowest_price":"$0.10","volume":"37,965","median_price":"$0.10"}
-{"name":"Prisma Case","lowest_price":"$0.10","volume":"22,815","median_price":"$0.09"}
-5/22/2022 11:13:14 PM
-{"name":"CSGO Weapon Case","lowest_price":"$68.81","volume":"193","median_price":"$66.93"}
-{"name":"Operation Bravo Case","lowest_price":"$46.76","volume":"165","median_price":"$42.69"}
-{"name":"CSGO weapon case 2","lowest_price":"$8.08","volume":"199","median_price":"$6.99"}
-{"name":"Winter Offensive Case","lowest_price":"$4.67","volume":"250","median_price":"$4.66"}
-{"name":" CSGO Weapon Case 3","lowest_price":"$5.08","volume":"244","median_price":"$4.97"}
-{"name":"Operation Phoneix Case","lowest_price":"$1.24","volume":"4,781","median_price":"$1.26"}
-{"name":"Huntsman Case","lowest_price":"$4.83","volume":"373","median_price":"$4.85"}
-{"name":"Operation Breakout Case","lowest_price":"$3.39","volume":"7,201","median_price":"$3.38"}
-{"name":" Operation Vanguard Case","lowest_price":"$1.03","volume":"823","median_price":"$1.01"}
-{"name":"Chroma Case","lowest_price":"$1.03","volume":"3,748","median_price":"$1.03"}
-{"name":"Chroma 2 Case ","lowest_price":"$0.93","volume":"15,297","median_price":"$0.93"}
-{"name":" Falchion case","lowest_price":"$0.29","volume":"5,043","median_price":"$0.29"}
-{"name":" Shadow Case","lowest_price":"$0.30","volume":"6,339","median_price":"$0.30"}
-{"name":" Revolver Case","lowest_price":"$0.25","volume":"11,253","median_price":"$0.27"}
-{"name":"Operation Wildfire Case","lowest_price":"$0.50","volume":"3,787","median_price":"$0.50"}
-{"name":"Chroma 3 Case","lowest_price":"$0.66","volume":"24,005","median_price":"$0.66"}
-{"name":"Gamma Case","lowest_price":"$0.83","volume":"11,896","median_price":"$0.83"}
-{"name":"Gamma 2 Case","lowest_price":"$0.93","volume":"15,795","median_price":"$0.91"}
-{"name":"Glove Case","lowest_price":"$2.96","volume":"10,109","median_price":"$2.93"}
-{"name":"Spectrum Case","lowest_price":"$1.06","volume":"8,442","median_price":"$0.99"}
-{"name":"Operation Hydra Case","lowest_price":"$15.48","volume":"234","median_price":"$15.24"}
-{"name":"Spectrum 2 Case","lowest_price":"$0.70","volume":"29,865","median_price":"$0.68"}
-{"name":"Clutch Case","lowest_price":"$0.31","volume":"103,903","median_price":"$0.31"}
-{"name":"Horizon Case","lowest_price":"$0.18","volume":"12,650","median_price":"$0.17"}
-{"name":"Danger Zone Case","lowest_price":"$0.11","volume":"37,695","median_price":"$0.11"}
-{"name":"Prisma Case","lowest_price":"$0.10","volume":"23,047","median_price":"$0.09"}
+{"name":"CSGO Weapon Case","dateTime":"5/19/2022 10:59:25 PM","lowest_price":"$65.82","volume":"162","median_price":"$64.88"}
+{"name":"Operation Bravo Case","dateTime":"5/19/2022 10:59:25 PM","lowest_price":"$47.09","volume":"147","median_price":"$43.61"}
+{"name":"CSGO weapon case 2","dateTime":"5/19/2022 10:59:25 PM","lowest_price":"$7.96","volume":"204","median_price":"$8.01"}
+{"name":"Winter Offensive Case","dateTime":"5/19/2022 10:59:25 PM","lowest_price":"$4.63","volume":"239","median_price":"$4.68"}
+{"name":" CSGO Weapon Case 3","dateTime":"5/19/2022 10:59:25 PM","lowest_price":"$4.79","volume":"333","median_price":"$4.88"}
+{"name":"Operation Phoneix Case","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$1.20","volume":"5,655","median_price":"$1.19"}
+{"name":"Huntsman Case","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$4.39","volume":"462","median_price":"$4.39"}
+{"name":"Operation Breakout Case","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$3.25","volume":"6,812","median_price":"$3.25"}
+{"name":" Operation Vanguard Case","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$0.92","volume":"1,009","median_price":"$0.93"}
+{"name":"Chroma Case","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$1.06","volume":"1,687","median_price":"$1.03"}
+{"name":"Chroma 2 Case ","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$0.83","volume":"18,696","median_price":"$0.83"}
+{"name":" Falchion case","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$0.28","volume":"9,196","median_price":"$0.29"}
+{"name":" Shadow Case","dateTime":"5/19/2022 10:59:26 PM","lowest_price":"$0.28","volume":"4,904","median_price":"$0.27"}
+{"name":" Revolver Case","dateTime":"5/19/2022 10:59:27 PM","lowest_price":"$0.25","volume":"9,537","median_price":"$0.23"}
+{"name":"Operation Wildfire Case","dateTime":"5/19/2022 10:59:27 PM","lowest_price":"$0.49","volume":"4,601","median_price":"$0.48"}
+{"name":"Chroma 3 Case","dateTime":"5/19/2022 10:59:27 PM","lowest_price":"$0.61","volume":"21,474","median_price":"$0.62"}
+{"name":"Gamma Case","dateTime":"5/19/2022 10:59:27 PM","lowest_price":"$0.81","volume":"11,311","median_price":"$0.81"}
+{"name":"Gamma 2 Case","dateTime":"5/19/2022 10:59:27 PM","lowest_price":"$0.92","volume":"15,223","median_price":"$0.92"}
+{"name":"Glove Case","dateTime":"5/19/2022 10:59:27 PM","lowest_price":"$2.89","volume":"10,086","median_price":"$2.96"}
+{"name":"Spectrum Case","dateTime":"5/19/2022 10:59:27 PM","lowest_price":"$0.96","volume":"7,821","median_price":"$0.94"}
+{"name":"Operation Hydra Case","dateTime":"5/19/2022 11:00:27 PM","lowest_price":"$15.22","volume":"232","median_price":"$14.88"}
+{"name":"Spectrum 2 Case","dateTime":"5/19/2022 11:00:28 PM","lowest_price":"$0.66","volume":"22,129","median_price":"$0.69"}
+{"name":"Clutch Case","dateTime":"5/19/2022 11:00:28 PM","lowest_price":"$0.29","volume":"88,775","median_price":"$0.29"}
+{"name":"Horizon Case","dateTime":"5/19/2022 11:00:28 PM","lowest_price":"$0.16","volume":"10,365","median_price":"$0.16"}
+{"name":"Danger Zone Case","dateTime":"5/19/2022 11:00:28 PM","lowest_price":"$0.11","volume":"34,804","median_price":"$0.10"}
+{"name":"Prisma Case","dateTime":"5/19/2022 11:00:28 PM","lowest_price":"$0.10","volume":"15,457","median_price":"$0.09"}

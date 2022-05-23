@@ -6,16 +6,19 @@ using System.IO;
 using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Amazon;
+using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2;
 class Program
 {
+    private static AmazonDynamoDBClient aClient = new AmazonDynamoDBClient(RegionEndpoint.USEast1);
+
     public static void Main(string[] args)
     {
+        writeData();
         String direct =  Environment.GetLogicalDrives()[0]+"/Users/"+ Environment.UserName+"/Desktop/CaseOutput.txt";
-        var startTimeSpan = TimeSpan.Zero;
-        var periodTimeSpan = TimeSpan.FromHours(1);
-
-       
-        updateCaseValues(1, direct);      
+  
+        updateCaseValues(1, direct);
         
     }
     private static void updateCaseValues(int c, string directory)
@@ -30,7 +33,7 @@ class Program
         string[] urlExtensionList = new string[] { "CS:GO%20Weapon%20Case", "Operation%20Bravo%20Case", "CS%3AGO%20Weapon%20Case%202", "Winter%20Offensive%20Weapon%20Case", "CS%3AGO%20Weapon%20Case%203", "Operation%20Phoenix%20Weapon%20Case", "Huntsman%20Weapon%20Case", "Operation%20Breakout%20Weapon%20Case", "Operation%20Vanguard%20Weapon%20Case", "Chroma%20Case", "Chroma%202%20Case", "Falchion%20Case", "Shadow%20Case", "Revolver%20Case", "Operation%20Wildfire%20Case", "Chroma%203%20Case", "Gamma%20Case", "Gamma%202%20Case", "Glove%20Case", "Spectrum%20Case", "Operation%20Hydra%20Case", "Spectrum%202%20Case", "Clutch%20Case", "Horizon%20Case", "Danger%20Zone%20Case", "Prisma%20Case" };
         string[] output = new string[urlExtensionList.Length]; //fetchApi(urlExtensionList, currency,client);
 
-        
+        sw.WriteLine(DateTime.Now);
         HttpClient client = new HttpClient();
         string result;
         CaseData currentCase;
@@ -43,7 +46,6 @@ class Program
             //insert name into json
             currentCase = deSerializeJson(result);
             currentCase.name=caseNames[i];
-            currentCase.date_time=DateTime.Now.ToString();
 
             sw.WriteLine(JsonSerializer.Serialize(currentCase));
         }
@@ -68,7 +70,6 @@ class Program
             try
             {
                 temp = client.GetStringAsync(url + urlExtension);
-                //Thread.Sleep(1000);
                 output = temp.Result;
                 Console.WriteLine("Sucess " + urlExtension);
             }
@@ -89,7 +90,7 @@ class Program
             {
                 //20 requests per minute apparently
                 Thread.Sleep(60000);
-
+                 
             }
 
         }
@@ -111,7 +112,20 @@ class Program
         return h;
     }
 
+    private static void writeData()
+    {
+        
+       
+        try
+        {
+            Table t = Table.LoadTable(aClient,"Cases");
 
+        }catch(Exception e)
+        {
+            Console.WriteLine(e.ToString());
+        }
+       
+    }
     private static CaseData deSerializeJson(String json)
     {
         //%20 =spacae
@@ -126,7 +140,6 @@ class Program
     public class CaseData
     {
         public string name { get; set; }
-        public string date_time { get; set; }
         public string lowest_price { get; set; }
         public string volume { get; set; }
         public string median_price { get; set; }

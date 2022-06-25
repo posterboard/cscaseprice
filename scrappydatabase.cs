@@ -3,31 +3,23 @@ using MongoDB.Driver;
 using System.Text.Json;
 using System.IO;
 using MongoDB.Bson.Serialization.Attributes;
-
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using System.Text;
+using System.Configuration;
 class Program {
    
     public static void Main(string[] args)
     {
         writeData();
-        //UpxzsOcbvTZKsFHO
-        //WhjY2BQmjW8SX5LL
-      
-        /*
-         
-
-        
-
-        var result = collection.Find(new BsonDocument()).SortByDescending(m => m["runtime"]).Limit(10).ToList();
-
-        foreach(var item in result)
-        {
-            Console.WriteLine(item);
-        }
-        */
     }
     public static  void writeData()
     {
-        var settings = MongoClientSettings.FromConnectionString("mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority");
+        
+        string connectionURI = ConfigurationManager.ConnectionStrings["MongoDBString"].ConnectionString+  "/?retryWrites=true&w=majority";
+        Console.WriteLine(connectionURI);
+        var settings = MongoClientSettings.FromConnectionString(connectionURI);
         var client = new MongoClient(settings);
         var database = client.GetDatabase("Case");
         string txtDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/scrappy";

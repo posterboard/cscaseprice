@@ -46,7 +46,7 @@ for i in range(len(urlExtensionList)):
         print("fail: "+urlExtensionList[i])
         time.sleep(60)
 
-connectionString = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority"
+connectionString = "mongodb+srv://<username>:<password>@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(connectionString)
 db = client['Case']
 collection = db["CasePriceData"]

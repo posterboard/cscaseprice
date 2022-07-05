@@ -3,7 +3,6 @@ import time
 import json
 import urllib.request
 from datetime import datetime
-from lxml import html
 from pymongo.mongo_client import MongoClient
 from pymongo import InsertOne
 

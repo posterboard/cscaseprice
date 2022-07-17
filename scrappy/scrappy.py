@@ -50,9 +50,12 @@ connectionString = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mon
 client = MongoClient(connectionString)
 db = client['Case']
 collection = db["CasePriceData"]
+newCollection = db["CurrentPriceData"]
 try:
     print(client.server_info())
 except:
     print("could not connect")
-
 collection.insert_many(objList)
+
+newCollection.delete_many({})
+newCollection.insert_many(objList)

@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -16,13 +16,15 @@
     <ul>
       <li>Case List</li>
     </ul>
-  </navigation>
+  </navigation> 
   <h1 class="title">TITLE</h1>
-  <p><?php echo "hellO" ?></p>
-  <div id="list-ofcases"><?php 
+  <p><?php echo "<p>hellO</p>" ?></p>
+  <div id="list-ofcases">
+      <?php 
       require "scrappy_website_db.php";
-      foreach ($case as $i) { ?>
-      <div class="case-wrap" data-id="<?=$i["product_id"]?>">
+      foreach ($case as $i) { 
+        ?>
+      <div class="case-wrap" data-id="<?=$i["_id"]?>">
         <div class="case-name"><?=$i["name"]?></div>
         <div class="case-price"><?=$i["median_price"]?></div>
       </div>

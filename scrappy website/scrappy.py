@@ -51,13 +51,17 @@ for i in range(len(urlExtensionList)):
         notJsonStr = json.loads(jsonStr)
         objList.append(notJsonStr)
 
-
-        currentCaseObj = case(caseList[i],str(datetime.now()),tempObj.lowest_price,tempObj.volume,tempObj.median_price,urlExtensionList[i])
+        currentCaseObj = currentCase(caseList[i],str(datetime.now()),tempObj.lowest_price,tempObj.volume,tempObj.median_price,urlExtensionList[i])
         jsonStr = json.dumps(currentCaseObj.__dict__)
         notJsonStr = json.loads(jsonStr)
         currentObjList.append(notJsonStr)
-
     except:
+        
+        currentCaseObj = currentCase(caseList[i],str(datetime.now()),tempObj.lowest_price,tempObj.volume,tempObj.median_price,urlExtensionList[i])
+        jsonStr = json.dumps(currentCaseObj.__dict__)
+        notJsonStr = json.loads(jsonStr)
+        currentObjList.append(notJsonStr)
+    
         print("fail: "+urlExtensionList[i])
         i-=1
         time.sleep(60)

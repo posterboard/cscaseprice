@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- asldfjal;sdkfj;als!-->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -26,7 +26,7 @@
       <a href=<?php echo "./sub_pages/blank.txt" ?> >
         <div class="case-wrap" data-id="<?=$i["_id"]?>">
           <div class="case-name"><?=$i["name"]?></div>
-          <div class="case-price">Price: <?=$i["lowest_price"]?></div>
+          <div class="case-price">Price: <?=$i["median_price"]?></div>
         </div>
       </a>
       <?php }

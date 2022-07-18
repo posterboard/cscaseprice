@@ -9,6 +9,8 @@ $client = new MongoDB\Client(
 $db = $client->Case;   
 $collection = $db->CurrentPriceData; 
 $case = $collection->find();
+
+
 /*
 foreach($case as $i){
     echo '<div class="case-wrap" data-id="';

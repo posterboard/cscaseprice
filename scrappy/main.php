@@ -19,14 +19,14 @@
   </navigation> 
   <h1 class="title">TITLE</h1>
   <p><?php echo "<p>hellO</p>" ?></p>
-  <div id="list-ofcases">
+  <div id="list-of-cases">
       <?php 
       require "scrappy_website_db.php";
       foreach ($case as $i) { 
         ?>
       <div class="case-wrap" data-id="<?=$i["_id"]?>">
         <div class="case-name"><?=$i["name"]?></div>
-        <div class="case-price"><?=$i["median_price"]?></div>
+        <div class="case-price">Price: <?=$i["median_price"]?></div>
       </div>
      
       <?php }

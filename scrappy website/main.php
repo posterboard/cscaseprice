@@ -18,7 +18,6 @@
     </ul>
   </navigation> 
   <h1 class="title">TITLE</h1>
-  <p><?php echo "<p>hellO</p>" ?></p>
   <div id="list-of-cases">
       <?php 
       require "scrappy_website_db.php";

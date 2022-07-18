@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<!-- asldfjal;sdkfj;als!-->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
@@ -17,17 +17,18 @@
       <li>Case List</li>
     </ul>
   </navigation> 
-  <h1 class="title">TITLE</h1>
+  <h1 class="title">Case List:</h1>
   <div id="list-of-cases">
       <?php 
       require "scrappy_website_db.php";
       foreach ($case as $i) { 
         ?>
-      <div class="case-wrap" data-id="<?=$i["_id"]?>">
-        <div class="case-name"><?=$i["name"]?></div>
-        <div class="case-price">Price: <?=$i["median_price"]?></div>
-      </div>
-     
+      <a href=<?php echo "./sub_pages/blank.txt" ?> >
+        <div class="case-wrap" data-id="<?=$i["_id"]?>">
+          <div class="case-name"><?=$i["name"]?></div>
+          <div class="case-price">Price: <?=$i["lowest_price"]?></div>
+        </div>
+      </a>
       <?php }
       
     ?></div>

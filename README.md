@@ -8,6 +8,6 @@ CS Case Price updates every hour.
 ## About
 Front End: HTML/CSS/JS 
 <br> 
-Back End: PHP, MongoDB, and Apache web server running on a linux vm.
+Back End: PHP, MongoDB, and Apache web server running on a Linux vm.
 
 Currently hosted here: 35.222.47.128

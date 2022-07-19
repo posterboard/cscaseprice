@@ -11,6 +11,7 @@ $collection = $db->CurrentPriceData;
 $case = $collection->find();
 
 
+
 /*
 foreach($case as $i){
     echo '<div class="case-wrap" data-id="';
@@ -26,3 +27,4 @@ foreach($case as $i){
 }
 
 */
+?>

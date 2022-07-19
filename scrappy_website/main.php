@@ -21,12 +21,16 @@
   <div id="list-of-cases">
       <?php 
       require "scrappy_website_db.php";
+      require "modify_filename.php";
       foreach ($case as $i) { 
         ?>
-      <a href=<?php echo join("",["./case_images/",$i["url"],".png"])?> >
+      <a href=<?php replaceFileName($i["name"])?> > 
+   <!-- <a href ="./case_images/Chroma%2520Case.png"> -->
+     
         <div class="case-wrap" data-id="<?=$i["_id"]?>" id="<?=$i["url"]?>">
           <div class="case-name"><?=$i["name"]?></div>
           <div class="case-price">Price: <?=$i["median_price"]?></div>
+          <img src=<?php replaceFileName($i["name"])?>>
         </div>
       </a>
       <?php }

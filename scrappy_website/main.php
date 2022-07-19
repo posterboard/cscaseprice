@@ -23,8 +23,8 @@
       require "scrappy_website_db.php";
       foreach ($case as $i) { 
         ?>
-      <a href=<?php echo "./sub_pages/blank.txt" ?> >
-        <div class="case-wrap" data-id="<?=$i["_id"]?>">
+      <a href=<?php echo join("",["./case_images/",$i["url"],".png"])?> >
+        <div class="case-wrap" data-id="<?=$i["_id"]?>" id="<?=$i["url"]?>">
           <div class="case-name"><?=$i["name"]?></div>
           <div class="case-price">Price: <?=$i["median_price"]?></div>
         </div>

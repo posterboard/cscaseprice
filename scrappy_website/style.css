@@ -1,6 +1,7 @@
 html{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: #edf6f9;
+
 }
 navigation{
     color:blue;
@@ -16,12 +17,15 @@ header{
 
     padding: 10px; 
 }
+img{
+    size:33%;
+}
 .case-wrap{
 
     background-color: #ffddd2;
     color:#006d77;
     padding: 10px 10px 10px 10px;
-    border: 1px solid rgba(0, 0, 0, 1);
+   /* border: 1px solid rgba(0, 0, 0, 1); */
     text-align: center;
 }
 

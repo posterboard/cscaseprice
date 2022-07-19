@@ -9,9 +9,15 @@ $client = new MongoDB\Client(
 $db = $client->Case;   
 $collection = $db->CurrentPriceData; 
 $case = $collection->find();
+$date = "ten minutes ago i promise.";
+try{
+    $singleObject =(array) $collection->findOne(['name'=>"Chroma Case"]);
+    $date = $singleObject["dateTime"];
+}catch (Exception $e){
+    print_r($e);
+}
 
-
-
+//idk
 /*
 foreach($case as $i){
     echo '<div class="case-wrap" data-id="';

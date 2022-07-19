@@ -18,6 +18,7 @@
     </ul>
   </navigation> 
   <h1 class="title">Case List:</h1>
+  <p>Last Updated: <?php require "scrappy_website_db.php"; echo $date;?></p>
   <div id="list-of-cases">
       <?php 
       require "scrappy_website_db.php";

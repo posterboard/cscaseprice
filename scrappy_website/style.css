@@ -1,13 +1,14 @@
 html{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:monospace;
     background-color: #edf6f9;
 
 }
 navigation{
     color:blue;
+    display:block;
 }
 header{
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
     text-align: center;
 }
 #list-of-cases{
@@ -18,20 +19,24 @@ header{
     padding: 10px; 
 }
 img{
-    size:33%;
+    width:75%;
+    height:auto;
 }
 .case-wrap{
 
     background-color: #ffddd2;
     color:#006d77;
     padding: 10px 10px 10px 10px;
+    font-size:larger;
    /* border: 1px solid rgba(0, 0, 0, 1); */
     text-align: center;
 }
 
 footer {
+    background-color: #585858;
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 2.5rem;            /* Footer height */
+    color: #edf6f9;
+    /*height: 2.5rem;            /* Footer height */
   }

@@ -11,7 +11,7 @@ $collection = $db->CurrentPriceData;
 $case = $collection->find();
 $date = "ten minutes ago i promise.";
 try{
-    $singleObject =(array) $collection->findOne(['name'=>"Chroma Case"]);
+    $singleObject =(array) $collection->findOne(['name'=>"Recoil Case"]);
     $date = $singleObject["dateTime"];
 }catch (Exception $e){
     print_r($e);

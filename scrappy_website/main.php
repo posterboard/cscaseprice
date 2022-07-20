@@ -13,12 +13,13 @@
   <script src="./script.js"></script>
   <header>csgo case price viewer.</header>
   <navigation>
-    <ul>
-      <li>Case List</li>
-    </ul>
+    <div class="header">
+      <p>Case List</p>
+      <input type="text" id="searchBar" placeholder="Search..">
+    </div>    
   </navigation> 
   <h1 class="title">Case List:</h1>
-  <p>Last Updated: <?php require "scrappy_website_db.php"; echo $date;?></p>
+ 
   <div id="list-of-cases">
       <?php 
       require "scrappy_website_db.php";
@@ -41,7 +42,10 @@
 
   <footer>
 
-    <h1>About</h1>
+    
+    <p>Case Prices Last Updated: <?php require "scrappy_website_db.php"; echo $date;?></p>
+    <a href = "./.gif"><p>About</p></a>
+    <a href ="https://github.com/zbrianhuang/cscaseprice"><p>Github</p></a>
   </footer>
 </body>
 

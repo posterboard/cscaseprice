@@ -1,7 +1,7 @@
 
 <?php
-require_once 'C:/Users/zbria/vendor/autoload.php';//direct file path
-//require_once './vendor/autload.php'; //vm
+//require_once 'C:/Users/zbria/vendor/autoload.php';//direct file path
+require_once './vendor/autoload.php'; //vm
 $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
 $client = new MongoDB\Client(
     $connectionStr

@@ -44,7 +44,7 @@
 
     
     <p>Case Prices Last Updated: <?php require "scrappy_website_db.php"; echo $date;?></p>
-    <a href = "./.gif"><p>About</p></a>
+    <a href = "./about.html"><p>About</p></a>
     <a href ="https://github.com/zbrianhuang/cscaseprice"><p>Github</p></a>
   </footer>
 </body>

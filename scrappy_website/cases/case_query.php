@@ -1,6 +1,6 @@
 <?php
 
-require_once './vendor/autoload.php';//change later
+require_once '../../vendor/autoload.php';//change later
 
 function queryCaseData($name, $yeslimit, $limit){   
     $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";

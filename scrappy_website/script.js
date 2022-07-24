@@ -1,10 +1,14 @@
 
+
 var listOfCases = document.getElementById('list-of-cases').getElementsByTagName('price');
 
+
 for (var i = 0;i<listOfCases.length;i++) {
+
     //loop runs throughh
-    listOfCases[i].innerHTML=calculatePriceChange(listOfCases[i].getAttribute("past_price"),listOfCases[i].getAttribute("current_price"));
+    listOfCases[i].textContent="Price Change:"+calculatePriceChange(listOfCases[i].getAttribute("past_price"),listOfCases[i].getAttribute("current_price"));
 }
+
 function calculatePriceChange(oldPrice,newPrice){
 
     var oldDouble = parseFloat(removeDollarSign(oldPrice));

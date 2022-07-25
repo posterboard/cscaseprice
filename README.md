@@ -6,7 +6,7 @@ Each price is determined by supply and demand, and are constantly changing. Inte
 CS Case Price updates every hour.
 
 ## About
-Front End: HTML/CSS/JS 
+Front End: HTML/CSS/JS + Chart JS
 <br> 
 Back End: PHP, MongoDB, and Apache web server running on a Linux vm.
 

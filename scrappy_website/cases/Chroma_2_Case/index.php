@@ -18,10 +18,10 @@
 <script>
     <?php 
     require "../case_query.php";
-    $phpPriceArray = json_encode(queryCaseData("Chroma 2 Case",1,12));
+    $phpPriceArray = json_encode(queryCaseData("CSGO Weapon Case",1,48));
     echo " var jsPriceArray = ". $phpPriceArray . ";";
     ?>;
-    var strBuilder = "[";
+
     /*
     for(var i= 0;i<jsPriceArray.length;i++){
         strBuilder+="'"+jsPriceArray[i].substring(1)+"',";
@@ -29,14 +29,17 @@
     var a = strBuilder.substring(0,strBuilder.length-1);
     a+="]";
     */
+    var xAxis = [];
     for(var i= 0;i<jsPriceArray.length;i++){
         jsPriceArray[i]=jsPriceArray[i].substring(1);
+        xAxis.push(i);
     }
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['12:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00'],
+        //labels: ['12:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00'],
+        labels:xAxis,
         datasets: [{
             label: 'USD',
             data:jsPriceArray,

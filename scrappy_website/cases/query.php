@@ -1,10 +1,10 @@
 <?php
 
 require_once './vendor/autoload.php';//change later
-
+$connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
+$client = new MongoDB\Client($connectionStr);
 function queryCaseData($name, $yeslimit, $limit){   
-    $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
-    $client = new MongoDB\Client($connectionStr);
+ 
     $db = $client->Case;   
     $collection = $db->CasePriceData; 
     if(!$yeslimit){
@@ -32,6 +32,7 @@ function queryCaseData($name, $yeslimit, $limit){
     
 
 }
+
 function removeDollarSign($input){
     return substr($input,1);
 }

@@ -18,8 +18,16 @@
 <script>
     <?php 
     require "../case_query.php";
-    $phpPriceArray = json_encode(queryCaseData("CSGO Weapon Case",1,48));
-    echo " var jsPriceArray = ". $phpPriceArray . ";";
+    //$phpPriceArray = json_encode(queryCaseData("Chroma Case",1,48));
+    $phpArray = queryCaseData("Chroma Case",1,48);
+    $phpPriceArray=[];
+    $phpDateArray=[];
+    for($i= 0;$i<count($phpArray);$i++){
+        array_push($phpPriceArray,$phpArray[$i][0]);
+        array_push($phpDateArray,$phpArray[$i][1]);
+    }
+    echo " var jsPriceArray = ". json_encode($phpPriceArray) . ";";
+    echo " var jsDateArray =" . json_encode($phpDateArray) . ";";
     ?>;
 
     /*
@@ -39,7 +47,7 @@
     type: 'line',
     data: {
         //labels: ['12:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00'],
-        labels:xAxis,
+        labels:jsDateArray,
         datasets: [{
             label: 'USD',
             data:jsPriceArray,

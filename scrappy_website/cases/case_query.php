@@ -1,6 +1,6 @@
 <?php
 
-require_once '../../vendor/autoload.php';//change later
+require_once '../../vendor/autoload.php';
 
 function queryCaseData($name, $yeslimit, $limit){   
     $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
@@ -25,13 +25,15 @@ function queryCaseData($name, $yeslimit, $limit){
     */
     $arr = array(); 
     foreach ($cursor as $i){
-        array_push($arr,$i['lowest_price']);
+        $tempArr = array($i['lowest_price'],$i['dateTime']);
+        array_push($arr,$tempArr);
         
     }
     return $arr;
     
 
 }
+
 function removeDollarSign($input){
     return substr($input,1);
 }

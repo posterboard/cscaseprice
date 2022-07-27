@@ -1,11 +1,24 @@
 <?php
 
 require_once '../../vendor/autoload.php';
+$connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
 
-function queryCaseData($name, $yeslimit, $limit){   
-    $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
-    $client = new MongoDB\Client($connectionStr);
-    $db = $client->Case;   
+$client = new MongoDB\Client($connectionStr);
+function queryCurrentPrice($name){
+    global $client;
+    $db = $client->Case;
+    $collection = $db -> CurrentPriceData;
+    try{
+        $singleObject =(array) $collection->findOne(['name'=>$name]);
+        $price = $singleObject["lowest_price"];
+    }catch (Exception $e){
+        print_r($e);
+    }
+    return $price;
+}
+function queryCaseData($name, $yeslimit, $limit){  
+    global $client;
+    $db = $client->Case; 
     $collection = $db->CasePriceData; 
     if(!$yeslimit){
         $cursor = $collection->find(['name'=>$name]);

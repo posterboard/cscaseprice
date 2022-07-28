@@ -4,7 +4,7 @@ require_once '../../vendor/autoload.php';
 $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
 
 $client = new MongoDB\Client($connectionStr);
-function queryCurrentPrice($name){
+function queryCurrentCase($name){
     global $client;
     $db = $client->Case;
     $collection = $db -> CurrentPriceData;
@@ -14,7 +14,7 @@ function queryCurrentPrice($name){
     }catch (Exception $e){
         print_r($e);
     }
-    return $price;
+    return $singleObject;
 }
 function queryCaseData($name, $yeslimit, $limit){  
     global $client;

@@ -12,28 +12,41 @@
     <?php 
     require "../case_query.php";
         //$phpPriceArray = json_encode(queryCaseData("Chroma Case",1,48));
-    $currentPrice = queryCurrentPrice("Chroma Case");
+    $caseObj = queryCurrentCase("Chroma Case");
+    $currentPrice = $caseObj["lowest_price"];
+    $currentVolume = $caseObj["volume"];
     $phpArray = queryCaseData("Chroma Case",1,48);
     $phpPriceArray=[];
     $phpDateArray=[];
+    
     for($i= 0;$i<count($phpArray);$i++){
         array_push($phpPriceArray,$phpArray[$i][0]);
         array_push($phpDateArray,$phpArray[$i][1]);
     }
     echo "var currentPrice = '". $currentPrice . "';";
+    echo "var currentVolume = '". $currentVolume."';";
     echo " var jsPriceArray = ". json_encode($phpPriceArray) . ";";
     echo " var jsDateArray =" . json_encode($phpDateArray) . ";";
     ?>;
-function chart(){
-            
-            for(var i= 0;i<jsPriceArray.length;i++){
+    var ctx;
+    var myChart;
+    for(var i= 0;i<jsPriceArray.length;i++){
                 jsDateArray[i] = jsDateArray[i].substring(5,19);
         
                 jsPriceArray[i]=jsPriceArray[i].substring(1);
                 
             }
-            const ctx = document.getElementById('myChart').getContext('2d');
-            const myChart = new Chart(ctx, {
+     try{
+            mychart.destroy();
+        }catch(exception_var){
+            console.log("Truly lazy.");
+        }
+       
+         
+    function chart(relative){
+        ctx = document.getElementById('priceChart').getContext('2d');
+            
+        myChart = new Chart(ctx, {
             type: 'line',
             data: {
         //labels: ['12:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00'],
@@ -42,23 +55,30 @@ function chart(){
                 label: 'USD',
                 data:jsPriceArray,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.9)'
+                    'rgba(255, 99, 132, 0.6)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)'
                 ],
-                borderWidth: 1
+                pointBackgroundColor: ['rgba(255,99,132,1)'],
+                fill:true,
+                borderWidth: 2
             }]
         },
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero:relative
                 }
             }
         }
     });
+
         }
+        function changeGraphMode(){
+        myChart.beginAtZero=true;
+            myChart.update();
+    }   
   </script>
 </head>
 
@@ -67,15 +87,18 @@ function chart(){
     <header id="header">Chroma 2 Case</header>
     <p id = "price"></p>
     <div id="chart_div">
-        <canvas id="myChart" ></canvas>
+        <canvas id="priceChart" >
+            <p>chart</p>
+        </canvas>
     </div>
-   
+    <button onclick="changeGraphMode()">settings</button>
+    <p id="stats"></p>   
     <script>
-        chart();
-        var p = document.getElementById("price");
+        chart(true);
+        var p = document.getElementById("stats");
 
 
-        p.innerHTML = currentPrice;
+        p.innerHTML = "Lowest Price:"+currentPrice+"<br> Volume:"+currentVolume;
         
 </script>
 

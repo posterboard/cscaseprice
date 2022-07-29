@@ -15,7 +15,7 @@
     $caseObj = queryCurrentCase("Chroma Case");
     $currentPrice = $caseObj["lowest_price"];
     $currentVolume = $caseObj["volume"];
-    $phpArray = queryCaseData("Chroma Case",1,48);
+    $phpArray = queryCaseData("Chroma Case",1,200);
     $phpPriceArray=[];
     $phpDateArray=[];
     
@@ -30,17 +30,15 @@
     ?>;
     var ctx;
     var myChart;
+    var displayPriceArray=[];
+    var displayDateArray=[];
     for(var i= 0;i<jsPriceArray.length;i++){
-                jsDateArray[i] = jsDateArray[i].substring(5,19);
-        
-                jsPriceArray[i]=jsPriceArray[i].substring(1);
-                
+                //jsDateArray[i] = jsDateArray[i].substring(5,19);
+                displayDateArray.push(jsDateArray[i].substring(5,19));
+                //jsPriceArray[i]=jsPriceArray[i].substring(1);
+                displayPriceArray.push(jsPriceArray[i].substring(1));
             }
-     try{
-            mychart.destroy();
-        }catch(exception_var){
-            console.log("Truly lazy.");
-        }
+   
        
          
     function chart(relative){
@@ -48,21 +46,29 @@
             
         myChart = new Chart(ctx, {
             type: 'line',
+            plugins:{
+                legend:{
+                    display:false
+                }
+            }   
+            ,
             data: {
         //labels: ['12:00','1:00','2:00','3:00','4:00','5:00','6:00','7:00','8:00','9:00','10:00','11:00'],
-                labels:jsDateArray,
+                labels:displayDateArray,
                 datasets: [{
                 label: 'USD',
-                data:jsPriceArray,
+                data:displayPriceArray,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.6)'
                 ],
                 borderColor: [
                     'rgba(255, 99, 132, 1)'
                 ],
-                pointBackgroundColor: ['rgba(255,99,132,1)'],
+                pointBackgroundColor: ['rgba(255,99,132,0)'],
+                pointBorderColor: ['rgba(255,99,132,0'],
                 fill:true,
-                borderWidth: 2
+                borderWidth: 2,
+                
             }]
         },
         options: {
@@ -75,10 +81,30 @@
     });
 
         }
-        function changeGraphMode(){
-        myChart.beginAtZero=true;
+        function changeDate(howManyToShow){
+            displayPriceArray =[];
+            displayDateArray=[];
+            var cut = howManyToShow;
+            for(var i = 0;i<howManyToShow;i++){
+                displayDateArray.push(jsDateArray[i].substring(5,19));
+                displayPriceArray.push(jsPriceArray[i].substring(1)); 
+            }
+            myChart.data.labels=displayDateArray;
+            myChart.data.data=displayPriceArray;
             myChart.update();
-    }   
+        }
+        function changeGraphMode(){
+            
+            if(myChart.options.scales.y.beginAtZero==false){
+                myChart.options.scales.y.beginAtZero=true;
+                myChart.update();
+            }else{
+                myChart.options.scales.y.beginAtZero=false;
+                myChart.update();
+            }
+
+            
+        }   
   </script>
 </head>
 
@@ -90,9 +116,16 @@
         <canvas id="priceChart" >
             <p>chart</p>
         </canvas>
+        <button onclick="changeGraphMode()">Toggle Relative Price</button>
+        <button onclick="changeDate(12)"> 12 hours</button>
+        <button onclick="changeDate(24)"> 1 Day</button>
+        <button onclick="changeDate(168)">1 Week</button>
+        <button onclick="changeDate(168)">1 Month</button>
+        
+        <p id="stats"></p>
     </div>
-    <button onclick="changeGraphMode()">settings</button>
-    <p id="stats"></p>   
+    
+      
     <script>
         chart(true);
         var p = document.getElementById("stats");

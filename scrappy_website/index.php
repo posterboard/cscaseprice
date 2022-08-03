@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>CS:GO Case Prices</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="./favicon.ico?">
   <link href="./style.css" rel="stylesheet" type="text/css" />
   
@@ -13,16 +16,18 @@
 </head>
 
 <body >
-  <navigation>
+<navigation>
     <div class="header">
-    <ul>
-        <li><a href="index.php">CSGO Case Prices</a></li>
-        <li><a href="./about.html">About</a></li>
-       
-      </ul>
+        <l>CSGO Case Prices</l>
+        <div class ="rightAlign">
+            <l><a href="index.php" >Home</a></l>
+            <l><a href="about.html" >About</a></l>
+
+        </div>
+    
     </div>    
   </navigation> 
-  <h1 id="lol" class="title">Case List:</h1>
+
 
   <div id="list-of-cases" onload="setPriceChange()">
 

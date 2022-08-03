@@ -59,10 +59,10 @@
                 label: 'USD',
                 data:displayPriceArray,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.6)'
+                    'rgba(66, 132, 244,0.7)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)'
+                    'rgba(66, 132, 244,1)'
                 ],
                 pointBackgroundColor: ['rgba(255,99,132,0)'],
                 pointBorderColor: ['rgba(255,99,132,0'],
@@ -113,13 +113,15 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
     <navigation>
     <div class="header">
-    <ul>
-        <li><a href="../../main.html">CSGO Case Prices</a></li>
-        <li><a href="./about.html">About</a></li>
-       
-      </ul>
+        <l><a href="index.php">CSGO Case Prices</a></l>
+        <div class ="rightAlign">
+            <l><a href="../../about.html" >Home</a></l>
+            <l><a href="../../about.html" >About</a></l>
+
+        </div>
+    
     </div>    
-    </navigation> 
+  </navigation> 
     <header id="header">Chroma 2 Case</header>
     <p id = "price"></p>
     <div id="chart_div">

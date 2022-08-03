@@ -1,15 +1,11 @@
 html{
     font-family:monospace;
     background-color: #edf6f9;
-    
+    margin: 0;
 }
-navigation{
-    color:blue;
-    display:block;
-}
-header{
 
-    text-align: center;
+body{
+    margin:0;
 }
 #list-of-cases{
     display: grid;
@@ -34,9 +30,47 @@ img{
 
 footer {
     background-color: #585858;
-    position: relative;
+    
     bottom: 0;
     width: 100%;
     color: #edf6f9;
+    bottom:0;
     /*height: 2.5rem;            /* Footer height */
   }
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;  
+    text-decoration: none;
+    background-color: #ffddd2;
+    
+}
+navigation{
+    background-color: #ffddd2;
+    
+}
+li{
+    display:inline;
+    text-align: center;
+    font-size:40px;
+    border-spacing: 0;
+    border-radius: 5px;
+
+    
+}
+
+a{
+    text-decoration: none;
+    color:pink;
+}
+
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  #chart_div{
+    position:relative;
+    padding: 0% 25% 0% 25%;
+    width:50%;
+    height:50%;
+}

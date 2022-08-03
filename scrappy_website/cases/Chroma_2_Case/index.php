@@ -6,16 +6,16 @@
   <meta name="viewport" content="width=device-width">
   <title>Chroma 2 Case - CS:GO Case Prices</title>
   <link rel="icon" type="image/x-icon" href="../../favicon.ico?">
-  <link href="../chart_style.css" rel="stylesheet" type="text/css" />
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
   <script src = "./price_chart.js"></script>
   <script>
     <?php 
     require "../case_query.php";
         //$phpPriceArray = json_encode(queryCaseData("Chroma Case",1,48));
-    $caseObj = queryCurrentCase("Chroma Case");
+    $caseObj = queryCurrentCase("CSGO Weapon Case");
     $currentPrice = $caseObj["lowest_price"];
     $currentVolume = $caseObj["volume"];
-    $phpArray = queryCaseData("Chroma Case",1,200);
+    $phpArray = queryCaseData("CSGO Weapon Case",1,200);
     $phpPriceArray=[];
     $phpDateArray=[];
     
@@ -85,7 +85,8 @@
             displayPriceArray =[];
             displayDateArray=[];
             var cut = howManyToShow;
-            for(var i = 0;i<howManyToShow;i++){
+            for(var i = jsPriceArray.length-howManyToShow;i<jsPriceArray.length;i++){
+                
                 displayDateArray.push(jsDateArray[i].substring(5,19));
                 displayPriceArray.push(jsPriceArray[i].substring(1)); 
             }
@@ -110,6 +111,15 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+    <navigation>
+    <div class="header">
+    <ul>
+        <li><a href="../../main.html">CSGO Case Prices</a></li>
+        <li><a href="./about.html">About</a></li>
+       
+      </ul>
+    </div>    
+    </navigation> 
     <header id="header">Chroma 2 Case</header>
     <p id = "price"></p>
     <div id="chart_div">
@@ -134,7 +144,13 @@
         p.innerHTML = "Lowest Price:"+currentPrice+"<br> Volume:"+currentVolume;
         
 </script>
+    <footer>
 
+    
+
+    <a href = "../../about.html"><p>About</p></a>
+    <a href ="https://github.com/zbrianhuang/cscaseprice"><p>Github</p></a>
+  </footer>
 </body>
 
 </html>

@@ -13,3 +13,11 @@ html{
     width:50%;
     height:50%;
 }
+footer {
+    background-color: #585858;
+    position: relative;
+
+    width: 100%;
+    color: #edf6f9;
+    /*height: 2.5rem;            /* Footer height */
+  }

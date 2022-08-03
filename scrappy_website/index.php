@@ -13,12 +13,13 @@
 </head>
 
 <body >
-
-  <header>csgo case price viewer.</header>
   <navigation>
     <div class="header">
-      <p>Case List</p>
-      <input type="text" id="searchBar" placeholder="Search..">
+    <ul>
+        <li><a href="index.php">CSGO Case Prices</a></li>
+        <li><a href="./about.html">About</a></li>
+       
+      </ul>
     </div>    
   </navigation> 
   <h1 id="lol" class="title">Case List:</h1>

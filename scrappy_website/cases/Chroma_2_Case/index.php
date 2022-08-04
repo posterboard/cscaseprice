@@ -12,10 +12,11 @@
     <?php 
     require "../case_query.php";
         //$phpPriceArray = json_encode(queryCaseData("Chroma Case",1,48));
-    $caseObj = queryCurrentCase("CSGO Weapon Case");
+    $caseObj = queryCurrentCase("Chroma 2 Case");
+    $caseName = $caseObj["name"];
     $currentPrice = $caseObj["lowest_price"];
     $currentVolume = $caseObj["volume"];
-    $phpArray = queryCaseData("CSGO Weapon Case",1,200);
+    $phpArray = queryCaseData("Chroma 2 Case",1,350);
     $phpPriceArray=[];
     $phpDateArray=[];
     
@@ -23,6 +24,7 @@
         array_push($phpPriceArray,$phpArray[$i][0]);
         array_push($phpDateArray,$phpArray[$i][1]);
     }
+    echo "var caseName = '" . $caseName . "';";
     echo "var currentPrice = '". $currentPrice . "';";
     echo "var currentVolume = '". $currentVolume."';";
     echo " var jsPriceArray = ". json_encode($phpPriceArray) . ";";
@@ -122,17 +124,17 @@
     
     </div>    
   </navigation> 
-    <header id="header">Chroma 2 Case</header>
+ 
     <p id = "price"></p>
     <div id="chart_div">
         <canvas id="priceChart" >
-            <p>chart</p>
+            <p>error</p>
         </canvas>
         <button onclick="changeGraphMode()">Toggle Relative Price</button>
         <button onclick="changeDate(12)"> 12 hours</button>
         <button onclick="changeDate(24)"> 1 Day</button>
         <button onclick="changeDate(168)">1 Week</button>
-        <button onclick="changeDate(168)">1 Month</button>
+        <button onclick="changeDate(350)">1 Month</button>
         
         <p id="stats"></p>
     </div>
@@ -143,7 +145,7 @@
         var p = document.getElementById("stats");
 
 
-        p.innerHTML = "Lowest Price:"+currentPrice+"<br> Volume:"+currentVolume;
+        p.innerHTML = "Name: "+caseName+"<br> Lowest Price:"+currentPrice+"<br> Volume:"+currentVolume;
         
 </script>
     <footer>

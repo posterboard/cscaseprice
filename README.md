@@ -1,5 +1,5 @@
 # cscaseprice
-Case Price monitors the prices of 27 cases from CS:GO listed on the Steam community market.
+Case Price monitors the prices of 35 cases from CS:GO listed on the Steam community market.
 
 Each price is determined by supply and demand, and are constantly changing. Interseting.
 

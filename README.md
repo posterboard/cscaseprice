@@ -10,4 +10,4 @@ Front End: HTML/CSS/JS + Chart JS
 <br> 
 Back End: PHP, MongoDB, and Apache web server running on a Linux vm.
 
-Currently hosted here: 35.222.47.128
+Currently hosted here: 104.198.232.19

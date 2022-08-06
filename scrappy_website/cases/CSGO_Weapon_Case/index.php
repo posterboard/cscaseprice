@@ -130,7 +130,7 @@
     <div class="header">
         <l><a href="index.php">CSGO Case Prices</a></l>
         <div class ="rightAlign">
-            <l><a href="../../about.html" >Home</a></l>
+        <l><a href="../../index.php" >Home</a></l>
             <l><a href="../../about.html" >About</a></l>
 
         </div>

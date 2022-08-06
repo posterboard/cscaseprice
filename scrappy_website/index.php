@@ -39,13 +39,13 @@
       foreach ($case as $i) { 
         list($pPrice,$cPrice)=queryCaseData($i["name"],1,2);
       ?>
-      <a href=<?php replaceFileName($i["name"])?> > 
+      <a href=<?php echo join("",["./cases/",replaceFileName($i["name"]),"/index.html"])?> > 
      
         <div class="case-wrap" data-id="<?=$i["_id"]?>" id="<?=$i["url"]?>">
           <div class="case-name"><?=$i["name"]?></div>
           <div class="case-price">Price: <?=$i["median_price"]?></div>
           <price past_price= <?php echo $pPrice ?> current_price=<?php echo $cPrice ?>> </price>
-          <img src=<?php replaceFileName($i["name"])?>>
+          <img src=<?php echo join("",["./case_images/",replaceFileName($i["name"]),".png"])?>>
         </div>
       </a>
       <?php }

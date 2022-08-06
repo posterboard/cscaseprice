@@ -16,7 +16,7 @@
   <script>
     <?php 
     require "../case_query.php";
-    $name = "Chroma 2 Case";
+    $name = "CS20 Case";
         //$phpPriceArray = json_encode(queryCaseData("Chroma Case",1,48));
     $caseObj = queryCurrentCase($name);
     $caseName = $caseObj["name"];

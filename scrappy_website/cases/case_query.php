@@ -2,7 +2,6 @@
 
 require_once '../../vendor/autoload.php';
 $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
-
 $client = new MongoDB\Client($connectionStr);
 function queryCurrentCase($name){
     global $client;
@@ -15,6 +14,18 @@ function queryCurrentCase($name){
         print_r($e);
     }
     return $singleObject;
+}
+function getMedian($name){
+    global $client;
+    $db = $client->Case;
+    $collection = $db -> CurrentPriceData;
+    try{
+        $singleObject =(array) $collection->findOne(['name'=>$name]);
+        $m= $singleObject["median_price"];
+    }catch (Exception $e){
+        print_r($e);
+    }
+    return $m;
 }
 function queryCaseData($name, $yeslimit, $limit){  
     global $client;

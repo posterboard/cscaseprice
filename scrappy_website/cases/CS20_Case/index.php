@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Chroma 2 Case - CS:GO Case Prices</title>
+  <title>CS20 Case - CS:GO Case Prices</title>
   <link rel="icon" type="image/x-icon" href="../../favicon.ico?">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
   <script src = "./price_chart.js"></script>
@@ -130,7 +130,7 @@
     <div class="header">
         <l><a href="index.php">CSGO Case Prices</a></l>
         <div class ="rightAlign">
-            <l><a href="../../about.html" >Home</a></l>
+            <l><a href="../../index.php" >Home</a></l>
             <l><a href="../../about.html" >About</a></l>
 
         </div>

@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Chroma 2 Case - CS:GO Case Prices</title>
+  <title>Snakebite Case - CS:GO Case Prices</title>
   <link rel="icon" type="image/x-icon" href="../../favicon.ico?">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
   <script src = "./price_chart.js"></script>

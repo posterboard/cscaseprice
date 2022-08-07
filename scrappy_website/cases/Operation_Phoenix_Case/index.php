@@ -9,14 +9,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Danger Zone Case - CS:GO Case Prices</title>
+  <title>Operation Phoenix Case - CS:GO Case Prices</title>
   <link rel="icon" type="image/x-icon" href="../../favicon.ico?">
   <link href="../../style.css" rel="stylesheet" type="text/css" />
   <script src = "./price_chart.js"></script>
   <script>
     <?php 
     require "../case_query.php";
-    $name = "Danger Zone Case";
+    $name = "Operation Phoenix Weapon Case";
         //$phpPriceArray = json_encode(queryCaseData("Chroma Case",1,48));
     $caseObj = queryCurrentCase($name);
     $caseName = $caseObj["name"];
@@ -130,7 +130,7 @@
     <div class="header">
         <l><a href="index.php">CSGO Case Prices</a></l>
         <div class ="rightAlign">
-        <l><a href="../../index.php" >Home</a></l>
+            <l><a href="../../index.php" >Home</a></l>
             <l><a href="../../about.html" >About</a></l>
 
         </div>

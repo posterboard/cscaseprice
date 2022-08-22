@@ -69,13 +69,16 @@ for i in range(len(urlExtensionList)):
 connectionString = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(connectionString)
 db = client['Case']
-collection = db["CasePriceData"]
+CasePriceData = db["CasePriceData"]
+PastPriceData = db["PastPriceData"]
 newCollection = db["CurrentPriceData"]
 try:
     print(client.server_info())
+    oldData = newCollection.find()
+    PastPriceData.insert_many(oldData)
 except:
     print("could not connect")
-collection.insert_many(objList)
+CasePriceData.insert_many(objList)
 
 newCollection.delete_many({})
 newCollection.insert_many(currentObjList)

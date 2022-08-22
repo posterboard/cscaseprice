@@ -2,20 +2,15 @@
 
 require_once './vendor/autoload.php';//change later
 
-function queryCaseData($name, $yeslimit, $limit){   
+function queryCasePrices($name){   
     $connectionStr = "mongodb+srv://mainuser:UpxzsOcbvTZKsFHO@cluster0.pattjaw.mongodb.net/?retryWrites=true&w=majority";
     $client = new MongoDB\Client($connectionStr);
     $db = $client->Case;   
-    $collection = $db->CasePriceData; 
-    if(!$yeslimit){
-        $cursor = $collection->find(['name'=>$name]);
-    }else{
-        //$cursor = $collection->find(['name'=>$name],['limit'=>$limit]);
-        $counter= $collection->count(['name'=>$name]);
-        $iterate = $counter-$limit;
-        $cursor = $collection->find(['name'=>$name],['skip'=>$iterate]);
-        
-    }
+    $pastPriceCollection = $db->PastPriceData; 
+    $currentPriceCollection = $db -> CurrentPriceData;
+    $old = $pastPriceCollection->findOne(['name'=>$name]);
+    $new = $currentPriceCollection->findOne(['name'=>$name]) ;  
+    
 
     /*
     foreach ($cursor as $i){
@@ -24,10 +19,10 @@ function queryCaseData($name, $yeslimit, $limit){
     }
     */
     $arr = array(); 
-    foreach ($cursor as $i){
-        array_push($arr,$i['lowest_price']);
-        
-    }
+
+    array_push($arr,$old['lowest_price']);
+    array_push($arr,$new['lowest_price']);
+
     return $arr;
     
 

@@ -37,7 +37,7 @@
       require "./cases/query.php";
       
       foreach ($case as $i) { 
-        list($pPrice,$cPrice)=queryCaseData($i["name"],1,2);
+        list($pPrice,$cPrice)=queryCasePrices($i["name"],1,2);
       ?>
       <a href=<?php echo join("",["./cases/",replaceFileName($i["name"]),"/index.html"])?> > 
      

@@ -12,4 +12,4 @@ Back End: PHP, MongoDB, and Apache web server running on a Linux vm.
 
 Currently hosted here: 104.198.232.19
 
-I should probably add a gitignore.
+The gitignore is not working ):

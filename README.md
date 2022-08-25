@@ -8,7 +8,7 @@ CS Case Price updates every hour.
 ## About
 Front End: HTML/CSS/JS + Chart JS
 <br> 
-Back End: PHP, MongoDB, and Apache web server running on a Linux vm.
+Back End: PHP, MongoDB, and Apache web server running on a Linux vm. lamp
 
 Currently hosted here: 104.198.232.19
 

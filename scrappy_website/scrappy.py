@@ -75,6 +75,7 @@ newCollection = db["CurrentPriceData"]
 try:
     print(client.server_info())
     oldData = newCollection.find()
+    PastPriceData.delete_many({})
     PastPriceData.insert_many(oldData)
 except:
     print("could not connect")
